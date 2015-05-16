@@ -1,0 +1,22 @@
+[
+  {
+    "country": "China",
+    "type": "imgs/student.png",
+    "steps": "30"
+  },
+  {
+    "country": "Schengen",
+    "type": "imgs/student.png",
+    "steps": "30"
+  },
+  {
+    "country": "USA",
+    "type": "imgs/student.png",
+    "steps": "30"
+  },
+  {
+    "country": "Spain",
+    "type": "imgs/student.png",
+    "steps": "30"
+  }
+]

@@ -1,0 +1,50 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="visa-service.html">
+<link rel="import" href="visa-card.html">
+<link rel="import" href="../../bower_components/paper-progress/paper-progress.html">
+
+<polymer-element name="visa-list">
+  <template>
+    <style>
+    :host {
+      display: block;
+      width: 100%;
+    }
+    visa-card {
+      margin-bottom: 0px;
+    }
+    polyfill-next-selector { content: '.fit'; }
+    ::content > .fit {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: auto;
+      left: 0;
+      width: auto;
+      margin: 0;
+    }
+    </style>
+
+    <visa-service id="service" visas="{{visas}}"></visa-service>
+    
+    <div layout vertical center>
+      <template repeat="{{visa in visas}}">
+        <visa-card>
+          <paper-progress class="top fit" value="{{visa.steps}}"></paper-progress>
+          <div vertical layout center>
+            <img width="74" height="74" src="imgs/{{visa.country}}.png">
+            <span center>{{visa.country}}</span>
+          </div>
+          <span flex></span>
+          <div vertical layout center>
+            <img width="74" height="74" src="{{visa.type}}">
+          </div>
+        </visa-card>
+      </template>
+    </div>
+  </template>
+
+  <script>
+  Polymer({});
+  </script>
+</polymer-element>
