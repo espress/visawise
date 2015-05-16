@@ -48,16 +48,21 @@
           <paper-icon-button icon="search"></paper-icon-button>
         </core-toolbar>
         
-        <!-- <core-animated-pages>
-        </core-animated-pages> -->
-        <visa-dashboard></visa-dashboard>
+        <core-animated-pages transitions="cross-fade">
+          <visa-dashboard id="page-0"></visa-dashboard>
+          <visa-explore id="page-1"></visa-explore>
+        </core-animated-pages>
         
       </core-header-panel>
 
     </core-drawer-panel>
-    <paper-fab icon="add"></paper-fab>
+    <paper-fab touch-action icon="add"></paper-fab>
   </template>
   <script type="text/javascript">
+  var fab = document.querySelector('paper-fab');
+  fab.addEventListener('click', function(e) {
+    this.selected = "page-1"
+  })
   Polymer({});
   </script>
 </polymer-element>
