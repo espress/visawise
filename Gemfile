@@ -43,3 +43,6 @@ group :development, :test do
   gem 'spring'
 end
 
+# Polymer Project
+gem 'polymer-rails'
+gem 'polymer-paper-rails'
