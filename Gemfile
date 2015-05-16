@@ -43,6 +43,9 @@ group :development, :test do
   gem 'spring'
 end
 
+# Use Sprockets 3.0.0 for polymer rails to work
+gem 'sprockets', "< 3.0.0"
+
 # Polymer Project
 gem 'polymer-rails'
 gem 'polymer-paper-rails'
