@@ -2,17 +2,17 @@
   {
     "country": "China",
     "type": "imgs/student.png",
-    "steps": "30"
+    "steps": "0"
   },
   {
     "country": "Schengen",
     "type": "imgs/student.png",
-    "steps": "30"
+    "steps": "45"
   },
   {
     "country": "USA",
     "type": "imgs/student.png",
-    "steps": "30"
+    "steps": "60"
   },
   {
     "country": "Spain",
