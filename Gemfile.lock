@@ -78,6 +78,8 @@ GEM
     nokogumbo (1.4.2)
       nokogiri
     pg (0.18.2)
+    polymer-core-rails (0.2.6)
+      polymer-rails (~> 0.2.2)
     polymer-paper-rails (0.2.6)
       polymer-rails (~> 0.2.5)
     polymer-rails (0.2.8)
@@ -158,6 +160,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   pg
+  polymer-core-rails
   polymer-paper-rails
   polymer-rails
   rails (= 4.2.1)

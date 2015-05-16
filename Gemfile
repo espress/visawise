@@ -48,4 +48,5 @@ gem 'sprockets', "< 3.0.0"
 
 # Polymer Project
 gem 'polymer-rails'
+gem 'polymer-core-rails'
 gem 'polymer-paper-rails'
