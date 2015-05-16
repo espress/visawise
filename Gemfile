@@ -49,3 +49,13 @@ gem 'sprockets', "< 3.0.0"
 # Polymer Project
 gem 'polymer-rails'
 gem 'polymer-paper-rails'
+
+# facebook login
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-google'
+gem 'therubyracer'
+gem 'devise'
+
+
+
