@@ -2,11 +2,10 @@
 <link rel="import" href="../../bower_components/paper-item/paper-item.html">
 <link rel="import" href="../../bower_components/core-menu/core-menu.html">
 
-<polymer-element name="visa-explore">
+<polymer-element name="visa-purpose">
   <template>
     <div vertical layout>
-      <img height="auto" width="100%" src="/imgs/swiss.png">
-      <img height="auto" width="100%" src="/imgs/material design-18.jpg">
+      <img height="auto" width="100%" src="/imgs/material design-19.jpg">
       <core-menu>
         <template repeat="{{country in countries}}">
           <paper-item>{{country}}</paper-item>
@@ -17,7 +16,7 @@
   <script>
   Polymer({
     countries: [
-      "USA", "UK", "Spain", "China"
+      "Tourism or business", "Study or exchange", "Transit via USA", "Employment", "Immigrate"
     ]
   });
   </script>

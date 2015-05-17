@@ -6,6 +6,10 @@
 <link rel="import" href="../../bower_components/core-animated-pages/core-animated-pages.html">
 <link rel="import" href="../../bower_components/paper-fab/paper-fab.html">
 <link rel="import" href="visa-dashboard.html">
+<link rel="import" href="visa-explore.html">
+<link rel="import" href="visa-purpose.html">
+<link rel="import" href="visa-identify.html">
+<link rel="import" href="visa-checklist.html">
 
 <polymer-element name="visa-app">
   <template>
@@ -48,9 +52,12 @@
           <paper-icon-button icon="search"></paper-icon-button>
         </core-toolbar>
         
-        <core-animated-pages transitions="cross-fade">
-          <visa-dashboard id="page-0"></visa-dashboard>
-          <visa-explore id="page-1"></visa-explore>
+        <core-animated-pages transitions="cross-fade" selected="2">
+          <visa-dashboard></visa-dashboard>
+          <visa-explore></visa-explore>
+          <visa-purpose></visa-purpose>
+          <visa-identify></visa-identify>
+          <visa-checklist></visa-checklist>
         </core-animated-pages>
         
       </core-header-panel>
@@ -59,10 +66,6 @@
     <paper-fab touch-action icon="add"></paper-fab>
   </template>
   <script type="text/javascript">
-  var fab = document.querySelector('paper-fab');
-  fab.addEventListener('click', function(e) {
-    this.selected = "page-1"
-  })
   Polymer({});
   </script>
 </polymer-element>
