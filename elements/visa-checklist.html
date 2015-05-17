@@ -1,1 +1,78 @@
-visa-checklist.html
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../bower_components/paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../../bower_components/paper-toast/paper-toast.html">
+<link rel="import" href="../../bower_components/core-menu/core-menu.html">
+
+<polymer-element name="visa-checklist">
+  <template>
+    <style>
+      paper-checkbox {
+        margin-right: 7px;
+      }
+
+      paper-item {
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 10px;
+      }
+
+      paper-checkbox::shadow #ink[checked] {
+        color: #4285f4;
+      }
+
+      paper-checkbox::shadow #checkbox.checked {
+        background-color: #ddd;
+        border-color: #4285f4;
+      }
+
+      paper-checkbox::shadow #ink {
+        color: #b5b5b5;
+      }
+
+      paper-checkbox::shadow #checkbox {
+        border-color: #b5b5b5;
+      }
+
+      core-menu {
+        margin-bottom: 50px;
+      }
+
+      paper-toast {
+        bottom: 40px;
+        left: 10px;
+      }
+    </style>
+
+    <div vertical layout>
+      <core-menu>
+        <h2>{{count}}/{{checklist.length}} documents uploaded</h2>
+        <template repeat="{{item in checklist}}">
+          <paper-item>
+            <img height="75%" width="auto" src="{{item.img}}">
+            <span flex one></span>
+            <p>{{item.name}}</p>
+            <span flex two></span>
+            <paper-checkbox checked="{{item.done}}" disabled></paper-checkbox>
+          </paper-item>
+        </template>
+      </core-menu>
+    </div>
+    <paper-toast text="You are applying for F1 VISA" duration="5000" opened></paper-toast>
+  </template>
+  <script>
+  Polymer({
+    checklist: [
+      {img: "imgs/passport.png", name: "Passport", done: true}, {img: "imgs/photo.png", name: "Photographs", done: true}, {img: "imgs/form.png", name: "I20 form", done: true}, {img: "imgs/form.png", name: "VISA fee receipt", done: true}, {img: "imgs/form.png", name: "Bank statement", done: false}, {img: "imgs/form.png", name: "Appointment letter", done: false}
+    ],
+    count: 0,
+    ready: function() {
+      var count = 0;
+      this.checklist.forEach(function (c) {
+        if (c.done) count++;
+      });
+      this.count = count;
+    }
+  });
+  </script>
+</polymer-element>
