@@ -7,15 +7,15 @@
     <div vertical layout>
       <img height="auto" width="100%" src="/imgs/material design-19.jpg">
       <core-menu>
-        <template repeat="{{country in countries}}">
-          <paper-item>{{country}}</paper-item>
+        <template repeat="{{purpose in purposes}}">
+          <paper-item>{{purpose}}</paper-item>
         </template>
       </core-menu>
     </div>
   </template>
   <script>
   Polymer({
-    countries: [
+    purposes: [
       "Tourism or business", "Study or exchange", "Transit via USA", "Employment", "Immigrate"
     ]
   });

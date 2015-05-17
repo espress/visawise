@@ -1,1 +1,33 @@
-visa-identify.html
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../bower_components/core-menu/core-menu.html">
+
+<polymer-element name="visa-identify">
+  <template>
+    <div vertical layout>
+      <img height="auto" width="100%" src="/imgs/material design-20.jpg">
+      <core-menu>
+        <template repeat="{{option in options1}}">
+          <paper-item>{{option}}</paper-item>
+        </template>
+      </core-menu>
+
+      <img height="auto" width="100%" src="/imgs/material design-21.jpg">
+      <core-menu>
+        <template repeat="{{option in options2}}">
+          <paper-item>{{option}}</paper-item>
+        </template>
+      </core-menu>
+    </div>
+  </template>
+  <script>
+  Polymer({
+    options1: [
+      "Yes", "No"
+    ],
+    options2: [
+      "Yes", "No"
+    ]
+  });
+  </script>
+</polymer-element>
