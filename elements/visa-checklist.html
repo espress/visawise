@@ -42,6 +42,12 @@
         bottom: 40px;
         left: 10px;
       }
+
+      core-icon[icon="check-circle"] {
+        color: #FF9100;
+        width: 32px;
+        height: 32px;
+      }
     </style>
 
     <div vertical layout>
@@ -53,7 +59,12 @@
             <span flex one></span>
             <p>{{item.name}}</p>
             <span flex two></span>
-            <paper-checkbox checked="{{item.done}}" disabled></paper-checkbox>
+            <template if="{{item.done}}">
+              <core-icon icon="check-circle"></core-icon>
+            </template>
+            <template if="{{!item.done}}">
+              <core-icon icon="check-box-outline-blank"></core-icon>
+            </template>
           </paper-item>
         </template>
       </core-menu>

@@ -10,6 +10,7 @@
 <link rel="import" href="visa-purpose.html">
 <link rel="import" href="visa-identify.html">
 <link rel="import" href="visa-checklist.html">
+<link rel="import" href="visa-document.html">
 
 <polymer-element name="visa-app">
   <template>
@@ -27,7 +28,7 @@
         color: #fff;
       }
 
-      paper-fab[icon=add] {
+      paper-fab {
         position: fixed;
         bottom: 7px;
         right: 7px;
@@ -52,20 +53,31 @@
           <paper-icon-button icon="search"></paper-icon-button>
         </core-toolbar>
         
-        <core-animated-pages transitions="cross-fade" selected="4">
+        <core-animated-pages transitions="cross-fade" selected="{{selected}}">
           <visa-dashboard></visa-dashboard>
           <visa-explore></visa-explore>
           <visa-purpose></visa-purpose>
           <visa-identify></visa-identify>
           <visa-checklist></visa-checklist>
+          <visa-document></visa-document>
         </core-animated-pages>
         
       </core-header-panel>
-
     </core-drawer-panel>
-    <paper-fab touch-action icon="add"></paper-fab>
+    <template if="{{isDashboard()}}">
+      <paper-fab icon="add"></paper-fab>
+    </template>
+    
+    <template if="{{isDocument()}}">
+      <paper-fab icon="cloud-upload"></paper-fab>
+    </template>
+
   </template>
   <script type="text/javascript">
-  Polymer({});
+  Polymer({
+    selected: 5,
+    isDashboard: function() { return this.selected == 0 },
+    isDocument: function() { return this.selected == 5; }
+  });
   </script>
 </polymer-element>
