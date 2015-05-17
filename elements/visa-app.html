@@ -28,20 +28,60 @@
         color: #fff;
       }
 
-      paper-fab {
+      paper-fab.user {
+        background-color: transparent;
+        position: absolute;
+        top: 90;
+        width: 112px;
+        height: 112px;
+      }
+
+      img.bottom.indent {
+        border-radius: 100%;
+        width: 112px;
+        height: 112px;
+        z-index: 99;
+        position: absolute;
+      }
+
+      paper-fab.user :: shadow core-icon :: shadow  div {
+        width: 128px;
+      }
+
+      paper-fab.control {
         position: fixed;
         bottom: 7px;
         right: 7px;
         background-color: #FF9100;
       }
+
+      core-header-panel {
+        height: 100%;
+      }
+
+      #side-menu {
+        margin-top: 50px;
+      }
     </style>
     <core-drawer-panel forceNarrow>
       
       <core-header-panel drawer layout vertical flex id="drawer">
-        <core-toolbar class="drawer">
-          <div>Application</div>
+        <core-toolbar class="drawer medium-tall">
+          <div class="top indent">
+            {{user.name}}
+          </div>
+          <paper-fab class="user bottom indent">
+          </paper-fab>
+          <img class="user bottom indent" src="/imgs/ujjwal.jpg">
         </core-toolbar>
-        <div> Drawer content... </div>
+        <core-menu id="side-menu">
+          <paper-item>My Visa</paper-item>
+          <paper-item>Explore</paper-item>
+          <paper-item>Book tickets</paper-item>
+          <paper-item>Deals</paper-item>
+          <paper-item>All Documents</paper-item>
+          <paper-item>Edit Profile</paper-item>
+        </core-menu>
       </core-header-panel>
       
       <core-header-panel main>
@@ -53,7 +93,7 @@
           <paper-icon-button icon="search"></paper-icon-button>
         </core-toolbar>
         
-        <core-animated-pages transitions="cross-fade" selected="{{selected}}">
+        <core-animated-pages fit transitions="cross-fade" selected="{{selected}}">
           <visa-dashboard></visa-dashboard>
           <visa-explore></visa-explore>
           <visa-purpose></visa-purpose>
@@ -65,19 +105,22 @@
       </core-header-panel>
     </core-drawer-panel>
     <template if="{{isDashboard()}}">
-      <paper-fab icon="add"></paper-fab>
+      <paper-fab class="control" icon="add"></paper-fab>
     </template>
     
     <template if="{{isDocument()}}">
-      <paper-fab icon="cloud-upload"></paper-fab>
+      <paper-fab class="control" icon="cloud-upload"></paper-fab>
     </template>
 
   </template>
   <script type="text/javascript">
   Polymer({
-    selected: 5,
+    selected: 0,
     isDashboard: function() { return this.selected == 0 },
-    isDocument: function() { return this.selected == 5; }
+    isDocument: function() { return this.selected == 5; },
+    user: {
+      name: "Ujjwal Thaakar"
+    }
   });
   </script>
 </polymer-element>
