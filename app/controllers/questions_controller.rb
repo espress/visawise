@@ -9,7 +9,7 @@ class QuestionsController < ApplicationController
 
      def create
         @visa = Question.new
-        respond_with User.create(
+        respond_with Question.create(
             data: params[:data])
         end
     end

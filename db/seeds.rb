@@ -28,3 +28,127 @@ document_list.each do |name, status, timestamp, scannedRequirement, scannedImage
   Document.create(name: name, status: status, timestamp:timestamp, scannedRequirement:scannedRequirement, scannedImagePath:scannedImagePath)
 end
 
+data = {
+  "id": 0,
+  "Which country do you want to go?": [
+    {
+      "USA": [
+        {
+          "id": 1,
+          "Which visa are you looking for": [
+            {
+              "Tourist\/Business": [
+                {
+                  "id": 2,
+                  "Are you visiting for tourism?": [
+                    {
+                      "Yes": "B2"
+                    },
+                    {
+                      "No": "B1"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Student": [
+                {
+                  "id": 3,
+                  "Are you going for a Vocational Program?": [
+                    {
+                      "Yes": "M"
+                    },
+                    {
+                      "No": [
+                        {
+                          "id": 4,
+                          "Are you going to pursue a full degree course?, say No if you are going for a short term Internship or Exchange Program": [
+                            {
+                              "Yes": "F"
+                            },
+                            {
+                              "No": "J"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Transit via USA": "Null"
+            },
+            {
+              "Employment": "Null"
+            },
+            {
+              "Immigrate": "Null"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Spain": [
+        {
+          "id": 0,
+          "Which visa are you looking for": [
+            {
+              "Tourist\/Business": [
+                {
+                  "id": 1,
+                  "Are you visiting for tourism?": [
+                    {
+                      "Yes": "B2"
+                    },
+                    {
+                      "No": "B1"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Student": [
+                {
+                  "id": 2,
+                  "Are you going for a Vocational Program?": [
+                    {
+                      "Yes": "M"
+                    },
+                    {
+                      "No": [
+                        {
+                          "id": 3,
+                          "Are you going to pursue a full degree course?, say No if you are going for a short term Internship or Exchange Program": [
+                            {
+                              "Yes": "F"
+                            },
+                            {
+                              "No": "J"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Employment": "Null"
+            },
+            {
+              "Immigrate": "Null"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+Question.create(data: data)
